@@ -25,9 +25,10 @@ public class StudentController {
     public @ResponseBody String addStudent(@RequestParam String firstName,
                                            @RequestParam String lastName,
                                            @RequestParam String email,
-                                           @RequestParam String course) {
+                                           @RequestParam String course,
+                                           @RequestParam String gpa) {
 
-        return studentService.addStudent(firstName, lastName, email, course);
+        return studentService.addStudent(firstName, lastName, email, course, gpa);
     }
 
     @GetMapping(path = "/students")
@@ -48,6 +49,7 @@ public class StudentController {
         student.setLastName(studentDetails.getLastName());
         student.setEmail(studentDetails.getEmail());
         student.setCourse(studentDetails.getCourse());
+        student.setGpa(studentDetails.getGpa());
         return new ResponseEntity<>(studentRepository.save(student), HttpStatus.OK);
     }
 

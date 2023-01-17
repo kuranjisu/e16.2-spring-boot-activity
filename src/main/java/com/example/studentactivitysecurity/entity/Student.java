@@ -17,6 +17,8 @@ public class Student {
     private String email;
     @Column(name="course")
     private String course;
+    @Column(name="gpa")
+    private String gpa;
 
     public Long getId() {
         return id;
@@ -56,5 +58,13 @@ public class Student {
 
     public void setCourse(String course) {
         this.course = course;
+    }
+
+    public String getGpa() {
+        return gpa;
+    }
+
+    public void setGpa(String gpa) {
+        this.gpa = gpa;
     }
 }

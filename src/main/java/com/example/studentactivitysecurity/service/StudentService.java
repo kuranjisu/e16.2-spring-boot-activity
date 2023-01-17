@@ -15,13 +15,14 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public String addStudent(String firstName, String lastName, String email, String course) {
+    public String addStudent(String firstName, String lastName, String email, String course, String gpa) {
         Student student = new Student();
 
         student.setFirstName(firstName);
         student.setLastName(lastName);
         student.setEmail(email);
         student.setCourse(course);
+        student.setGpa(gpa);
 
         studentRepository.save(student);
 
